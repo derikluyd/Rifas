@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Website de Rifas</title>
+</head>
+<body>
+  <header>
+    <h1>Website de Rifas</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#rifas">Rifas</a></li>
+      <li><a href="#comprar-tickets">Comprar Números</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="sobre">
+      <h2>Sobre</h2>
+      <p>Seu sonho está mais próximo que o possível, Realizando sonho.</p>
+    </section>
+    <section id="rifas">
+      <h2>Rifas em Andamento</h2>
+      <ul>
+        <li>
+          <h3>GOLF Rebaixado</h3>
+          <p>Sorteio em 22 de Fevereiro</p>
+          <a href="#comprar-tickets">Comprar Tickets</a>
+        </li>
+        <li>
+          <h3>iPhone 12 Pro Max</h3>
+          <p>Sorteio em 10 de abril</p>
+          <a href="#comprar-tickets">Comprar Tickets</a>
+        </li>
+      </ul>
+    </section>
+    <section id="comprar-tickets">
+      <h2>Comprar Tickets</h2>
+
+      tag <script> 
+      // Codigo JS
+      // Define o número total de bilhetes disponíveis para a rifa
+const totalTickets = 100;
+
+// Define o array para armazenar os números dos bilhetes vendidos
+let soldTickets = [];
+
+// Função para vender bilhetes
+function sellTicket() {
+  // Verifica se ainda há bilhetes disponíveis
+  if (soldTickets.length >= totalTickets) {
+    console.log("Desculpe, não há mais bilhetes disponíveis para a venda.");
+    return;
+  }
+
+  // Gera um número aleatório para o bilhete
+  let ticketNumber = Math.floor(Math.random() * totalTickets) + 1;
+
+  // Verifica se o número gerado já foi vendido
+  while (soldTickets.includes(ticketNumber)) {
+    ticketNumber = Math.floor(Math.random() * totalTickets) + 1;
+  }
+
+  // Adiciona o número do bilhete vendido ao array
+  soldTickets.push(ticketNumber);
+
+  console.log(`Bilhete vendido: número ${ticketNumber}`);
+}
